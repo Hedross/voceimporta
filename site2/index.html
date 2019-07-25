@@ -1,0 +1,573 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Você Importa</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="dd7ec527-238c-441f-b06c-6f580e9117d7" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Voc Importa/VI.png"/></div><h1 class="page-title">Você Importa</h1></header><div class="page-body"><h1 id="10254ee8-6949-4cf9-b690-31d7100fac32" class="block-color-orange"><mark class="highlight-orange"><strong>Quem somos nós?</strong></mark></h1><p id="1b958048-add0-411d-a38e-83de7062b827" class="">          Somos <strong><mark class="highlight-orange">uma startup</mark></strong> que traz uma solução tecnológica inovadora para o <mark class="highlight-orange"><strong>combate do Bullying</strong></mark>.  Apoiados pela Pluris Aceleradora nós desenvolvemos e rodamos nossa ideia primeiramente em Ribeirão Preto, mas buscamos expandir ainda em 2019 por toda São Paulo e em breve para todo o território nacional.</p><h1 id="a1237adb-8831-47ef-b392-db0ea38d232b" class="block-color-orange"><strong>O que Fazemos?</strong></h1><p id="88e41a03-c0f0-4a5d-ad7a-a5361f7dfed9" class="">          Nosso aplicativo <mark class="highlight-orange"><strong>oferece capacitação</strong></mark> aos educadores para lidar com a situação do bullying em suas escolas, também oferecemos informação e capacitação de igual valia para os pais, é importante que <mark class="highlight-orange"><strong>todos participem</strong></mark> da cultura que queremos criar e que se sintam também <mark class="highlight-orange"><strong>empoderados </strong></mark>para lidar com a situação.</p><p id="34000bf9-5d20-4b97-a478-5e8ce25f5f72" class="">           Além disso, nosso principal ponto é o <mark class="highlight-orange"><strong>botão de S.O.S</strong></mark>, onde com toda segurança necessária um aluno pode reportar que está presenciando ou sofrendo bullying na escola e todos os responsáveis serão alertados do que está ocorrendo e direcionados a <mark class="highlight-orange"><strong>melhor resolução</strong></mark> do problema.</p><h1 id="be479e8f-5914-4f1a-a9d0-2da238413e5b" class="block-color-orange"><strong>Plano de Serviço</strong></h1><p id="c62eeee3-aa55-4082-bc74-855041ab3af0" class="">          Através de uma assinatura mensal ou anual, as escolas podem nos contratar e oferecer uma capacitação de qualidade e uma saída de segurança para todos os seus alunos e colaboradores.</p><p id="bd476266-74a5-46cc-b4f2-0e79e4f2c857" class="">
+</p><p id="adacd740-89ca-4b65-875d-e3bb14193765" class="">          Se a escola possuir:
+               <mark class="highlight-orange"><strong>Menos de 100 Alunos</strong></mark> o valor da mensalidade é de <mark class="highlight-orange"><strong>R$ 49,90</strong></mark> e o da anuidade com desconto é de <mark class="highlight-orange"><strong>R$ 490,90</strong></mark><strong>.
+</strong>               <mark class="highlight-orange"><strong>Mais de 100 Alunos</strong></mark> o valor da mensalidade é de <mark class="highlight-orange"><strong>R$ 89,90</strong></mark> e o da anuidade com desconto é de <mark class="highlight-orange"><strong>R$ 890,90</strong></mark><strong>.</strong></p><p id="e25f62e1-ad1d-497e-af18-962613b58a33" class="">
+</p><p id="b1c98a76-7af4-42da-9c09-4d091e4095cf" class="">          Oferecemos a possibilidade de vinculo por mais tempo, com<mark class="highlight-orange"><strong> pacotes de até 10 anos</strong></mark>. Basta entrar em contato conosco.</p><h1 id="f11cdd5b-6133-45b5-a0a9-893be1bfeb39" class="block-color-orange">Contatos</h1><div id="022ad987-11a0-4e39-b485-de0bac40f651" class="column-list"><div id="5780294d-11a5-4b42-b1bb-51096b181a57" style="width:25%" class="column"><p id="6f7755ed-087a-484f-b497-b100e91b2e09" class=""><strong>COMERCIAL</strong></p><p id="e5e54d08-f3d0-435b-8461-9310b93187d6" class=""><a href="mailto:voceimporta@voceimp.com">voceimporta</a><a href="mailto:voceimporta@voceimp.com"><mark class="highlight-orange">@voceimp</mark></a><a href="mailto:voceimporta@voceimp.com">.com</a></p><p id="45e0f17b-2947-4c9e-ba55-173075015e7c" class="">(xx) xxx xxx xxx</p></div><div id="88dfbb64-6f71-44c5-95e4-b6ea1b6ca1e9" style="width:25%" class="column"><p id="17046120-ccd0-4bec-b658-e81363feacbd" class=""><strong>SUPORTE TECNICO</strong></p><p id="e3c21472-aa61-4a0a-b808-51d5cb7b4ee3" class=""><a href="mailto:felipe@voceimp.com">felipe</a><a href="mailto:felipe@voceimp.com"><mark class="highlight-orange">@voceimp</mark></a><a href="mailto:felipe@voceimp.com">.com.br</a></p><p id="401df1d2-cdee-45bc-ae12-cc7935e43b55" class="">(21) 990 640 299</p></div><div id="3cbbecfe-36df-46fa-980e-6139df420209" style="width:25%" class="column"><p id="7cd78cdc-5a58-4874-89d1-0e44dfea4d2a" class=""><strong>CONTATO JURIDICO</strong></p><p id="4a37d77f-9bd2-4b87-8d04-b4cd98569b5c" class=""><a href="mailto:rafael@voceimp.com">rafael</a><a href="mailto:rafael@voceimp.com"><mark class="highlight-orange">@voceimp</mark></a><a href="mailto:rafael@voceimp.com">.com.br</a></p><p id="73ef606c-b8e4-4690-bb05-3b405631cf1f" class="">(16) 994 613 230</p></div><div id="5eab7e2b-0675-497a-a99d-889ce09859c1" style="width:25%" class="column"><p id="710fd8bd-bbd0-4e6d-b741-d6796a2fbfed" class=""><strong>APOIO PSICOLÓGICO</strong></p><p id="ed91df98-6ff9-49ff-9e02-b111abc84ea5" class=""><a href="mailto:patricia@voceimp.com">patricia</a><a href="mailto:patricia@voceimp.com"><mark class="highlight-orange">@voceimp</mark></a><a href="mailto:patricia@voceimp.com">.com.br</a></p><p id="99d0791b-ae4f-4bcc-a432-85428ad274fc" class="">(16) 999 656 424</p></div></div><h1 id="76cefc55-8a8b-420f-b0ea-a7816a876580" class="block-color-orange">Nosso Aplicativo</h1><div id="9be21919-1238-4250-8b8a-9a15e6db2abd" class="column-list"><div id="5f061627-c1ac-41b2-a268-db887f2f3849" style="width:25%" class="column"><figure id="8214b636-ca9c-4c74-90c3-2aeb98d828e4" class="image"><a href="Voc Importa/Tela_Inicial.png"><img style="width:384px" src="Voc Importa/Tela_Inicial.png"/></a></figure></div><div id="f2f6deb4-14fc-4d94-bac5-1ed2617c6fb2" style="width:25%" class="column"><figure id="1b77a9bb-3766-4621-b638-4813beaf7a0d" class="image"><a href="Voc Importa/Tela_Criar_Conta.png"><img style="width:1080px" src="Voc Importa/Tela_Criar_Conta.png"/></a></figure></div><div id="17836598-ef1e-43bd-ace9-737533bc1927" style="width:25%" class="column"><figure id="aa037fd8-8bd8-426b-95b6-48737b042243" class="image"><a href="Voc Importa/Tela_Login.png"><img style="width:1080px" src="Voc Importa/Tela_Login.png"/></a></figure></div><div id="3185b78f-2f5e-460d-b084-1cf549ba9124" style="width:25%" class="column"><figure id="b193b701-1195-43f4-9416-5091a5a20efa" class="image"><a href="Voc Importa/Tela_Seleo.png"><img style="width:432px" src="Voc Importa/Tela_Seleo.png"/></a></figure></div></div><p id="40e53fa8-66bf-445d-af1f-ef498331a0fb" class="">
+</p><p id="a8a3b515-9f85-4e76-a1d2-2c2d3391ece5" class="">
+</p><p id="7c36f1cb-ccf1-4321-8ae3-65efd4d0d0ee" class="">
+</p><p id="8f90e6db-1b81-4584-9972-7444c81a267a" class="">
+</p><p id="d1edc2ef-2632-47a5-9182-496554bce6e5" class="">@copyrighted 2019 Você Importa</p></div></article></body></html>
